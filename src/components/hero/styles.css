@@ -1,0 +1,50 @@
+/* Hero */
+.hero-section {
+  position: relative;
+  background-image: url("/images/backgrounds/hero-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image-wrpper {
+  margin: 7px;
+  position: relative;
+}
+.image-wrpper::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 100px;
+  height: 100px;
+  background-image: url("/images/svg/image-border-top.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+.image-wrpper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -7px;
+  right: -7px;
+  width: 100px;
+  height: 100px;
+  background-image: url("/images/svg/image-border-bottom.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+.swiper-pagination {
+  position: static;
+}
+.hero-section .swiper-pagination-bullet {
+  background: var(--gray-color);
+  width: 20px;
+  height: 5px;
+  border: 1px solid var(--gray-color);
+  border-radius: 1.5px;
+}
+.hero-section .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}

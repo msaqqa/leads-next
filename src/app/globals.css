@@ -1,0 +1,59 @@
+@import "tailwindcss";
+/* Import the tw-elements plugin */
+/* @import "tw-elements/src/css/tailwind.scss";
+@import "tw-elements/src/js/base-component.js"; */
+/* @plugin 'tw-elements/plugin'; */
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+
+  --color-blue-500: #0074d9;
+  --color-accent: #ff5323;
+  --color-neutral-900: #121212;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #616161;
+
+  --default-transition-duration: 500ms;
+}
+
+/* Global */
+
+:root {
+  --accent-color: #ff5323;
+  --gray-color: #bdbdbd;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.container {
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (width < 48rem) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media (width >= 48rem) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media (width >= 64rem) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+@media (width >= 80rem) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+@media (width >= 96rem) {
+  .container {
+    padding: 0 6rem;
+  }
+}

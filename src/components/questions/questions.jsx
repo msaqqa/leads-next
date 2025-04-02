@@ -2,7 +2,46 @@
 import { useState } from "react";
 
 function Questions() {
+  const items = [
+    {
+      id: 1,
+      title: "What do we do?",
+      content:
+        "We provide an innovative platform for price comparison, helping you find the best options and prices effortlessly.",
+    },
+    {
+      id: 2,
+      title: "Getting started with Leads!",
+      content:
+        "It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
+    },
+    {
+      id: 3,
+      title: "Is the service completely free?",
+      content:
+        "It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
+    },
+    {
+      id: 4,
+      title: "How does support work?",
+      content:
+        "It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
+    },
+    {
+      id: 5,
+      title: "Do you provide tutorials?",
+      content:
+        "It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.",
+    },
+  ];
+
   const [activeTab, setActiveTab] = useState(1);
+  const [openItem, setOpenItem] = useState(1);
+
+  const toggleAccordion = (id) => {
+    setOpenItem(openItem === id ? null : id);
+  };
+
   return (
     <div className="questions bg-white pb-16">
       <div className="container wow animate__animated animate__fadeInUp">
@@ -84,222 +123,48 @@ function Questions() {
                 aria-labelledby="tabs-general-tab"
                 data-twe-tab-active
               >
-                <div id="accordionGeneral">
-                  <div className="accordion-item">
-                    <h2 id="headingOne">
+                <div className="w-full max-w-2xl mx-auto">
+                  {items.map((item) => (
+                    <div key={item.id}>
                       <button
-                        className="group relative flex w-full items-center bg-white text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100"
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
+                        className={`group relative flex w-full items-cente gap-4 text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors cursor-pointer ${
+                          openItem === item.id ? "bg-neutral-100" : "bg-white"
+                        }`}
+                        onClick={() => toggleAccordion(item.id)}
                       >
-                        <span className="me-6 h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
+                        <span
+                          className={`transition-transform duration-200 ${
+                            openItem === item.id ? "rotate-180" : "rotate-0"
+                          }`}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                             stroke="currentColor"
+                            className="h-6 w-6"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                             />
                           </svg>
                         </span>
-                        What do we do?
+                        {item.title}
                       </button>
-                    </h2>
-                    <div
-                      id="collapseOne"
-                      className="!visible"
-                      data-twe-collapse-item
-                      data-twe-collapse-show
-                      aria-labelledby="headingOne"
-                      data-twe-parent="#accordionGeneral"
-                    >
-                      <div className="bg-white rounded-b-2xl p-5 pl-14 pt-0 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100">
-                        We provide an innovative platform for price comparison,
-                        helping you find the best options and prices
-                        effortlessly.
-                      </div>
+                      {openItem === item.id && (
+                        <div
+                          className={`rounded-b-2xl p-5 pl-14 pt-0 transition-colors ${
+                            openItem === item.id ? "bg-neutral-100" : "bg-white"
+                          }`}
+                        >
+                          {item.content}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                  <div className="accordion-item">
-                    <h2 className="mb-0" id="headingTwo">
-                      <button
-                        className="group relative flex w-full items-center bg-white text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100"
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-collapse-collapsed
-                        data-twe-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                      >
-                        <span className="me-6 h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                            />
-                          </svg>
-                        </span>
-                        Getting started with Leads!
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseTwo"
-                      className="!visible hidden"
-                      data-twe-collapse-item
-                      aria-labelledby="headingTwo"
-                      data-twe-parent="#accordionGeneral"
-                    >
-                      <div className="bg-white rounded-b-2xl p-5 pl-14 pt-0 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100">
-                        It is hidden by default, until the collapse plugin adds
-                        the appropriate classes that we use to style each
-                        element.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-item">
-                    <h2 className="accordion-header mb-0" id="headingThree">
-                      <button
-                        className="group relative flex w-full items-center bg-white text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100"
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-collapse-collapsed
-                        data-twe-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        <span className="me-6 h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                            />
-                          </svg>
-                        </span>
-                        Is the service completely free?
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseThree"
-                      className="!visible hidden"
-                      data-twe-collapse-item
-                      aria-labelledby="headingThree"
-                      data-twe-parent="#accordionGeneral"
-                    >
-                      <div className="bg-white rounded-b-2xl p-5 pl-14 pt-0 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100">
-                        It is hidden by default, until the collapse plugin adds
-                        the appropriate classes that we use to style each
-                        element.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-item">
-                    <h2 className="accordion-header mb-0" id="headingFour">
-                      <button
-                        className="group relative flex w-full items-center bg-white text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100"
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-collapse-collapsed
-                        data-twe-target="#collapseFour"
-                        aria-expanded="false"
-                        aria-controls="collapseFour"
-                      >
-                        <span className="me-6 h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                            />
-                          </svg>
-                        </span>
-                        How does support work?
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseFour"
-                      className="!visible hidden"
-                      data-twe-collapse-item
-                      aria-labelledby="headingFour"
-                      data-twe-parent="#accordionGeneral"
-                    >
-                      <div className="bg-white rounded-b-2xl p-5 pl-14 pt-0 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100">
-                        It is hidden by default, until the collapse plugin adds
-                        the appropriate classes that we use to style each
-                        element.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="">
-                    <h2 className="accordion-header mb-0" id="headingFive">
-                      <button
-                        className="group relative flex w-full items-center bg-white text-neutral-900 text-lg md:text-2xl font-semibold rounded-t-2xl p-5 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100"
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-collapse-collapsed
-                        data-twe-target="#collapseFive"
-                        aria-expanded="false"
-                        aria-controls="collapseFive"
-                      >
-                        <span className="me-6 h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                            />
-                          </svg>
-                        </span>
-                        Do you provide tutorials?
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseFive"
-                      className="!visible hidden"
-                      data-twe-collapse-item
-                      aria-labelledby="headingFive"
-                      data-twe-parent="#accordionGeneral"
-                    >
-                      <div className="bg-white rounded-b-2xl p-5 pl-14 pt-0 transition-colors [&:not([data-twe-collapse-collapsed])]:bg-neutral-100">
-                        It is hidden by default, until the collapse plugin adds
-                        the appropriate classes that we use to style each
-                        element.
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 function Header() {
@@ -55,78 +56,75 @@ function Header() {
               className="mb-4 lg:mb-0 mr-2 pr-0 lg:ps-2"
               data-twe-nav-item-ref=""
             >
-              <a
-                href="#!"
+              <Link
+                href="/"
+                className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out data-[aria-current='true']:text-blue-500"
                 data-twe-nav-link-ref=""
                 data-aria-current="false"
-                className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out data-[aria-current='true']:text-blue-500"
               >
                 Finances
-              </a>
+              </Link>
             </li>
             {/* Insurance Link */}
             <li
               className="mb-4 lg:mb-0 mr-2 pr-0 lg:ps-2"
               data-twe-nav-item-ref=""
             >
-              <a
+              <Link
+                href="/"
                 className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out [aria-current='true']:text-blue-500"
-                href="#!"
                 data-twe-nav-link-ref=""
                 data-aria-current="false"
               >
                 Insurance
-              </a>
+              </Link>
             </li>
             {/* Diversified link */}
             <li
               className="mb-4 lg:mb-0 mr-2 pr-0 lg:ps-2"
               data-twe-nav-item-ref=""
             >
-              <a
+              <Link
+                href="/"
                 className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out data-[aria-current='true']:text-blue-500"
-                href="./diversified.html"
                 data-twe-nav-link-ref=""
                 data-aria-current="false"
               >
                 Diversified
-              </a>
+              </Link>
             </li>
             {/* Consultation link */}
             <li
               className="mb-4 lg:mb-0 mr-2 pr-0 lg:ps-2"
               data-twe-nav-item-ref=""
             >
-              <a
+              <Link
+                href="/"
                 className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out data-[aria-current='true']:text-blue-500"
-                href="./consultation.html"
                 data-twe-nav-link-ref=""
                 data-aria-current="false"
               >
                 Consultation
-              </a>
+              </Link>
             </li>
             {/* News link */}
             <li
               className="mb-4 lg:mb-0 mr-2 pr-0 lg:ps-2"
               data-twe-nav-item-ref=""
             >
-              <a
+              <Link
+                href="/"
                 className="text-base font-medium text-neutral-900 transition duration-200 hover:text-blue-500 hover:ease-in-out data-[aria-current='true']:text-blue-500"
-                href="#!"
                 data-twe-nav-link-ref=""
                 data-aria-current="false"
               >
                 News
-              </a>
+              </Link>
             </li>
           </ul>
-          <a
-            href="./comparison.html"
-            className="inline-block bg-blue-500 text-white text-sm rounded-md p-3.5 border border-blue-500 transition-colors hover:bg-white hover:text-blue-500"
-          >
-            Start Comparison
-          </a>
+          <button className="inline-block bg-blue-500 text-white text-sm rounded-md p-3.5 border border-blue-500 transition-colors hover:bg-white hover:text-blue-500 cursor-pointer">
+            <Link href="/">Start Comparison</Link>
+          </button>
         </div>
       </div>
     </nav>

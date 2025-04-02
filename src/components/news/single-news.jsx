@@ -16,7 +16,7 @@ function SingleNews({ data }) {
         <p className="text-sm font-normal text-gray-500 line-clamp-3 mb-4">
           {data.desc}
         </p>
-        <button className="self-start bg-white text-blue-500 border border-blue-500 rounded-md px-6 py-3 transition hover:bg-blue-500 hover:text-white hover:-translate-y-1 group">
+        <button className="self-start bg-white text-blue-500 border border-blue-500 rounded-md px-6 py-3 transition hover:bg-blue-500 hover:text-white hover:-translate-y-1 group cursor-pointer">
           <Link href={"/"} className="flex items-center space-x-1">
             <span>Learn more</span>
             <svg

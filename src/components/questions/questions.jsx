@@ -29,7 +29,7 @@ function Questions() {
                   className={`inline-block  rounded-full w-32 text-center py-3 capitalize border border-neutral-900 transition-colors ${
                     activeTab === 1
                       ? "bg-neutral-900 text-white"
-                      : "bg-white text-neutral-900 hover:bg-neutral-100"
+                      : "bg-white text-neutral-900 hover:bg-neutral-100 cursor-pointer"
                   }`}
                   onClick={() => setActiveTab(1)}
                 >
@@ -41,7 +41,7 @@ function Questions() {
                   className={`inline-block rounded-full w-32 text-center py-3 capitalize border border-neutral-900 transition-colors ${
                     activeTab === 2
                       ? "bg-neutral-900 text-white"
-                      : "bg-white text-neutral-900 hover:bg-neutral-100"
+                      : "bg-white text-neutral-900 hover:bg-neutral-100 cursor-pointer"
                   }`}
                   onClick={() => setActiveTab(2)}
                 >
@@ -53,7 +53,7 @@ function Questions() {
                   className={`inline-block rounded-full w-32 text-center py-3 capitalize border border-neutral-900 transition-colors ${
                     activeTab === 3
                       ? "bg-neutral-900 text-white"
-                      : "bg-white text-neutral-900 hover:bg-neutral-100"
+                      : "bg-white text-neutral-900 hover:bg-neutral-100 cursor-pointer"
                   }`}
                   onClick={() => setActiveTab(3)}
                 >
@@ -65,7 +65,7 @@ function Questions() {
                   className={`inline-block rounded-full w-32 text-center py-3 capitalize border border-neutral-900 transition-colors ${
                     activeTab === 4
                       ? "bg-neutral-900 text-white"
-                      : "bg-white text-neutral-900 hover:bg-neutral-100"
+                      : "bg-white text-neutral-900 hover:bg-neutral-100 cursor-pointer"
                   }`}
                   onClick={() => setActiveTab(4)}
                 >

@@ -115,7 +115,7 @@ const Hero = () => {
                 <p className="text-base lg:text-lg text-stone-900 mb-5">
                   {tab.subtitle}
                 </p>
-                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 group">
+                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 group cursor-pointer">
                   <Link href={"/"} className="flex items-center space-x-1">
                     <span>{tab.buttonText}</span>
                     <svg

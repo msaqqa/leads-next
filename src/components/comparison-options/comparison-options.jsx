@@ -58,7 +58,7 @@ function ComparisonOptions() {
                 <li className="pl-12 mb-4">No contribution obligation.</li>
               </ul>
               <div>
-                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 hover:-translate-y-1 group">
+                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 hover:-translate-y-1 group cursor-pointer">
                   <Link href={"/"} className="flex items-center space-x-1">
                     <span>Start Comparison</span>
                     <svg

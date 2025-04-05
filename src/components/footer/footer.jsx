@@ -1,6 +1,15 @@
 "use client";
 
+import Link from "next/link";
+import { useState } from "react";
+
 function Footer() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <footer className="bg-neutral-900 text-white pt-16">
       <div className="container">
@@ -42,9 +51,9 @@ function Footer() {
         </div>
         <div className="content-footer py-12 border-y border-neutral-200 flex flex-col md:flex-row gap-x-6 gap-y-12">
           <div className="w-full md:w-1/2">
-            <a href="index.html">
-              <img className="mb-5" src="./images/footer-logo.png" alt="Logo" />
-            </a>
+            <Link href="/">
+              <img className="mb-5" src="/images/footer-logo.png" alt="Logo" />
+            </Link>
             <p className="text-lg w-full md:w-1/2 mb-5">
               We work to provide the best offers that suit you.
             </p>
@@ -239,7 +248,7 @@ function Footer() {
                 </svg>
               </span>
               {/* Dropdown */}
-              <div className="relative" data-twe-dropdown-ref="">
+              {/* <div className="relative" data-twe-dropdown-ref="">
                 <a
                   className="inline-flex text-sm text-neutral-200 mr-4"
                   href="#"
@@ -287,6 +296,50 @@ function Footer() {
                     </a>
                   </li>
                 </ul>
+              </div> */}
+              <div className="relative">
+                <button
+                  className="inline-flex text-sm text-neutral-200 mr-4"
+                  onClick={toggleDropdown}
+                  aria-expanded={isOpen ? "true" : "false"}
+                >
+                  Language
+                  <span className="ms-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <ul className="absolute z-1000 float-left m-0 list-none overflow-hidden rounded-lg border-none bg-white shadow-lg bottom-full mb-2">
+                    <li>
+                      <Link
+                        href="/"
+                        className="block w-full px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-100"
+                      >
+                        English
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/"
+                        className="block w-full px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-100"
+                      >
+                        German
+                      </Link>
+                    </li>
+                  </ul>
+                )}
               </div>
             </div>
           </div>

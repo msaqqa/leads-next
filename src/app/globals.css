@@ -1,8 +1,4 @@
 @import "tailwindcss";
-/* Import the tw-elements plugin */
-/* @import "tw-elements/src/css/tailwind.scss";
-@import "tw-elements/src/js/base-component.js"; */
-/* @plugin 'tw-elements/plugin'; */
 @theme {
   --font-poppins: "Poppins", sans-serif;
 

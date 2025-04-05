@@ -1,7 +1,7 @@
 import ComparisonOptions from "@/components/comparison-options/comparison-options";
 import Consultants from "@/components/consultants";
 import Experts from "@/components/experts/experts";
-import Hero from "@/components/hero/hero";
+import HomeHero from "@/components/hero/home-hero/home-hero";
 import LeadsFeatures from "@/components/leads-features";
 import News from "@/components/news/news";
 import Partners from "@/components/partners/partners";
@@ -10,13 +10,13 @@ import Testimonials from "@/components/testimonials/testimonials";
 import Trust from "@/components/trust/trust";
 
 export const metadata = {
-  title: "Home Page",
+  title: "Leads | Home",
 };
 
 function Home() {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <Trust />
       <ComparisonOptions />
       <Partners />

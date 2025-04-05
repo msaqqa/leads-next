@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
+  // trailingSlash: true,
   // basePath: "/leads-next",
   // assetPrefix: "/leads-next",
   // reactStrictMode: true,

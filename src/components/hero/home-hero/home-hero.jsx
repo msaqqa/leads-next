@@ -48,7 +48,7 @@ const tabs = [
   },
 ];
 
-const Hero = () => {
+const HomeHero = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [manualChange, setManualChange] = useState(false);
 
@@ -169,4 +169,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

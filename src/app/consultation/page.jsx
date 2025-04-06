@@ -81,7 +81,7 @@ function page() {
           <h2 className="text-2xl lg:text-4xl font-semibold text-neutral-900 capitalize mb-8">
             Consultations about the services we provide
           </h2>
-          {/* <!--Tabs navigation--> */}
+          {/* <!-- Consultation Cards --> */}
           <ConsultationCards tabs={tabs} consultationData={consultationData} />
         </div>
       </div>

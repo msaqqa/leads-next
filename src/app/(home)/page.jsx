@@ -1,5 +1,5 @@
 import ComparisonOptions from "@/components/comparison-options/comparison-options";
-import Consultants from "@/components/consultants";
+import Consultants from "@/components/home/consultants";
 import Experts from "@/components/experts/experts";
 import HomeHero from "@/components/hero/home-hero/home-hero";
 import LeadsFeatures from "@/components/leads-features";

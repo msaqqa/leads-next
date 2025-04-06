@@ -1,23 +1,50 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/finances", label: "Finances" },
+  { href: "/insurance", label: "Insurance" },
+  { href: "/diversified", label: "Diversified" },
+  { href: "/consultation", label: "Consultation" },
+  { href: "/news", label: "News" },
+];
 
 function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const links = [
-    { href: "/finances", label: "Finances" },
-    { href: "/insurance", label: "Insurance" },
-    { href: "/diversified", label: "Diversified" },
-    { href: "/consultation", label: "Consultation" },
-    { href: "/news", label: "News" },
-  ];
+  const [addShadow, setAddShadow] = useState(false);
+
+  useEffect(() => {
+    const navbar = document.getElementById("navbar");
+    const hero = document.getElementById("hero");
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const navbarHeight = navbar?.offsetHeight || 90;
+
+      const triggerHeight = hero
+        ? hero.offsetHeight - navbar.offsetHeight
+        : navbarHeight;
+
+      setAddShadow(scrollPosition > triggerHeight);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   return (
     <nav
       id="navbar"
-      className="fixed w-full top-0 left-0 bg-white z-50 py-4 lg:py-5 transition"
+      className={`fixed w-full top-0 left-0 bg-white z-50 py-4 lg:py-5 transition ${
+        addShadow ? "shadow-lg" : ""
+      }`}
       data-twe-navbar-ref=""
     >
       <div className="container relative flex justify-between items-center">

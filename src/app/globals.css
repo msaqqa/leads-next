@@ -13,7 +13,6 @@
 }
 
 /* Global */
-
 :root {
   --accent-color: #ff5323;
   --gray-color: #bdbdbd;
@@ -23,6 +22,7 @@ body {
   font-family: "Poppins", sans-serif !important;
 }
 
+/* Component */
 .container {
   max-width: 100% !important;
   margin-left: auto;

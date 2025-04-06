@@ -1,6 +1,11 @@
-import ContentTabs from "@/components/comparison/content-tabs";
-import MainSection from "@/components/comparison/main-section";
+import ContentTabs from "@/components/comparison-details/content-tabs";
+import MainSection from "@/components/comparison-details/main-section";
+import MoreConsultation from "@/components/comparison-details/more consultation";
 import { notFound } from "next/navigation";
+
+export const metadata = {
+  title: "Leads | Comparison Details",
+};
 
 export default function ComparisonDetails({ params }) {
   const { id } = params;
@@ -9,8 +14,9 @@ export default function ComparisonDetails({ params }) {
 
   return (
     <>
-      <MainSection id={id} />
+      <MainSection />
       <ContentTabs />
+      <MoreConsultation />
     </>
   );
 }

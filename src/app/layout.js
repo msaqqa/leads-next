@@ -1,7 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import Header from "@/components/layout/header/header";
+import Footer from "@/components/layout/footer/footer";
 // Import Swiper styles
 import "swiper/css";
 

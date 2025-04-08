@@ -1,3 +1,4 @@
+"use client";
 import "./styles.css";
 
 function LeadsFeatures() {
@@ -29,7 +30,7 @@ function LeadsFeatures() {
               Expert advice by telephone.
             </li>
           </ul>
-          <img src="./images//leads-features.png" alt="" />
+          <img src="/images//leads-features.png" alt="" />
         </div>
       </div>
     </div>

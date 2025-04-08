@@ -200,8 +200,11 @@ function Questions() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <video className="aspect-video rounded-2xl" controls>
-              <source src="./images/instructional video.mp4" type="video/mp4" />
+            <video
+              src="/images/instructional-video.mp4"
+              className="aspect-video rounded-2xl"
+              controls
+            >
               Your browser does not support the video tag.
             </video>
           </div>

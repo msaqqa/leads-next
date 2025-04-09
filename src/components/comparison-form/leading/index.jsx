@@ -34,9 +34,9 @@ const LeadingSection = () => {
             </div>
           </div>
           <div className="leading-video md:col-span-2 mb-10 lg:mb-0">
-            {/* <video src="/images/leading.mp4" class="rounded-2xl" controls>
+            <video src="/images/leading.mp4" class="rounded-2xl" controls>
               Your browser does not support the video tag.
-            </video> */}
+            </video>
           </div>
           <div className="leading-info md:col-span-3 lg:col-span-2">
             <img

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Step from "./Step";
+import Step from "./step";
 import StepSuccess from "./step-success";
 
 const StepperForm = ({ steps, currentStep, setCurrentStep }) => {

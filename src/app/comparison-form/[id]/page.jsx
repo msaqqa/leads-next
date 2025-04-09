@@ -23,9 +23,9 @@ function page({ params }) {
       <AdviceSteps />
       <LeadsFeatures />
       <Testimonials />
-      <div className="pt-16">
+      {/* <div className="pt-16">
         <Questions />
-      </div>
+      </div> */}
     </>
   );
 }

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import LeadsButton from "@/components/leads/leads-button";
 
 const links = [
   { href: "/finances", label: "Finances" },
@@ -106,9 +107,14 @@ function Header() {
               </li>
             ))}
           </ul>
-          <button className="inline-block bg-blue-500 text-white text-sm rounded-md p-3.5 border border-blue-500 transition-colors hover:bg-white hover:text-blue-500 cursor-pointer">
-            <Link href="/">Start Comparison</Link>
-          </button>
+          <LeadsButton
+            btnText={"Start Comparisons"}
+            btnLink={"/comparison-form/01"}
+            btnArrow={false}
+            btnTextSize={"text-sm"}
+            btnPadding={"p-3.5"}
+            btnRadius={"rounded-md"}
+          />
         </div>
       </div>
     </nav>

@@ -4,7 +4,7 @@ import Link from "next/link";
 function Consultant({ consultant }) {
   return (
     <div className="relative h-[530px] rounded-2xl overflow-hidden transition [&>img]:hover:scale-105">
-      <Link href="./consultation-details">
+      <Link href="./comparison-details/01">
         <img
           className="absolute top-0 left-0 w-full h-full bg-gray-100 transition"
           src={consultant.img}

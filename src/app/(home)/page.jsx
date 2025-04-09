@@ -3,7 +3,7 @@ import Consultants from "@/components/home/consultants";
 import Experts from "@/components/home/experts/experts";
 import HomeHero from "@/components/hero/home-hero/home-hero";
 import LeadsFeatures from "@/components/leads-features";
-import News from "@/components/news/news";
+import News from "@/components/home/news/news";
 import Partners from "@/components/home/partners/partners";
 import Questions from "@/components/questions/questions";
 import Testimonials from "@/components/testimonials/testimonials";

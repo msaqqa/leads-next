@@ -200,13 +200,15 @@ function Questions() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <video
-              src="/images/instructional-video.mp4"
-              className="aspect-video rounded-2xl"
-              controls
-            >
-              Your browser does not support the video tag.
-            </video>
+            <div className="aspect-video rounded-2xl bg-blue-50 overflow-hidden">
+              <video
+                src="/images/instructional-video.mp4"
+                className="w-full h-full object-cover"
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>

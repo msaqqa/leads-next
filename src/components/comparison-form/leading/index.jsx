@@ -1,4 +1,5 @@
 "use client";
+import LeadsButton from "@/components/leads/leads-button";
 
 const LeadingSection = () => {
   return (
@@ -33,11 +34,19 @@ const LeadingSection = () => {
               </p>
             </div>
           </div>
+
           <div className="leading-video md:col-span-2 mb-10 lg:mb-0">
-            <video src="/images/leading.mp4" class="rounded-2xl" controls>
-              Your browser does not support the video tag.
-            </video>
+            <div className="aspect-[9/16] bg-gray-50 rounded-2xl overflow-hidden">
+              <video
+                src="/images/leading.mp4"
+                className="w-full h-full object-contain"
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
+
           <div className="leading-info md:col-span-3 lg:col-span-2">
             <img
               className="mb-10"
@@ -59,23 +68,11 @@ const LeadingSection = () => {
               How can we meet the growing demand for electricity while
               protecting our climate and make planet a better place?
             </p>
-            <button className="mt-4 bg-blue-500 text-white border border-blue-500 rounded-full px-10 py-3 transition hover:bg-white hover:text-blue-500 hover:-translate-y-1 [&>svg]:text-white [&>svg]:hover:text-blue-500 [&>svg]:hover:translate-x-2">
-              Learn more
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                className="w-5 h-5 inline-block ml-1 transition"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </button>
+            <LeadsButton
+              btnText="Learn more"
+              btnLink={"/comparison-details/01"}
+              btnPadding="px-10 py-3"
+            />
           </div>
         </div>
         {/* Leading Features */}

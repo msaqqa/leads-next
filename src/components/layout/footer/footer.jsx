@@ -1,5 +1,6 @@
 "use client";
 
+import LeadsButton from "@/components/leads/leads-button";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -41,12 +42,12 @@ function Footer() {
                 placeholder="Enter Your Email"
               />
             </div>
-            <button
-              type="button"
-              className="bg-blue-500 text-white px-6 py-3 border border-blue-500 rounded-full transition-colors hover:bg-white hover:text-blue-500"
-            >
-              Subscribe
-            </button>
+            <LeadsButton
+              btnText="Subscribe"
+              btnPadding="px-6 py-3"
+              btnArrow={false}
+              onClick={() => {}}
+            />
           </div>
         </div>
         <div className="content-footer py-12 border-y border-neutral-200 flex flex-col md:flex-row gap-x-6 gap-y-12">

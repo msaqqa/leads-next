@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
+import LeadsButton from "@/components/leads/leads-button";
 
 const tabs = [
   {
@@ -115,25 +115,10 @@ const HomeHero = () => {
                 <p className="text-base lg:text-lg text-stone-900 mb-5">
                   {tab.subtitle}
                 </p>
-                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 group cursor-pointer">
-                  <Link href={"/"} className="flex items-center space-x-1">
-                    <span>{tab.buttonText}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-5 h-5 transition-transform transform ml-1 group-hover:translate-x-1 group-hover:text-blue-500"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </Link>
-                </button>
+                <LeadsButton
+                  btnText={tab.buttonText}
+                  btnLink={"/comparison-form/01"}
+                />
               </div>
               <div className="w-full md:w-1/2 md:-mt-[73px] lg:-mt-[105px] rounded-2xl pb-6">
                 <Swiper

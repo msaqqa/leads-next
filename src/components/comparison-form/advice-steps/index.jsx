@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import "./styles.css";
+import LeadsButton from "@/components/leads/leads-button";
 
 const AdviceSteps = () => {
   return (
@@ -31,25 +31,11 @@ const AdviceSteps = () => {
               </li>
             ))}
           </ul>
-          <button className="bg-blue-500 text-white border border-blue-500 rounded-full px-10 py-3 transition hover:bg-white hover:text-blue-500 hover:-translate-y-1 group cursor-pointer">
-            <Link href={"/"} className="flex items-center space-x-1">
-              <span>Learn more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5 transition-transform transform ml-1 group-hover:translate-x-1 group-hover:text-blue-500"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </Link>
-          </button>
+          <LeadsButton
+            btnText="Learn more"
+            btnLink={"/comparison-details/01"}
+            btnPadding="px-10 py-3"
+          />
         </div>
         <div className="w-full md:w-1/2">
           <img

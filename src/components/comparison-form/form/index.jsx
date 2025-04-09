@@ -82,7 +82,7 @@ const formData = {
 function index() {
   const [currentStep, setCurrentStep] = useState(0);
   return (
-    <div className="py-16">
+    <div id="form-section" className="py-16">
       <div className="container">
         <div className="flex">
           <div>

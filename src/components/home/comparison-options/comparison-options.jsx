@@ -1,5 +1,6 @@
 "use client";
 
+import LeadsButton from "@/components/leads/leads-button";
 import Link from "next/link";
 
 const options = [
@@ -58,25 +59,10 @@ function ComparisonOptions() {
                 <li className="pl-12 mb-4">No contribution obligation.</li>
               </ul>
               <div>
-                <button className="inline-flex items-center bg-blue-500 text-white rounded-full px-7 py-5 border border-blue-500 transition hover:bg-white hover:text-blue-500 hover:-translate-y-1 group cursor-pointer">
-                  <Link href={"/"} className="flex items-center space-x-1">
-                    <span>Start Comparison</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-5 h-5 transition-transform transform ml-1 group-hover:translate-x-1 group-hover:text-blue-500"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </Link>
-                </button>
+                <LeadsButton
+                  btnText={"Start Comparison"}
+                  btnLink={"/comparison-form/02"}
+                />
               </div>
             </div>
           ))}

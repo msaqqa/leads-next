@@ -10,9 +10,11 @@
   },
   "homepage": ".",
   "dependencies": {
+    "lottie-react": "^2.4.1",
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-loading-skeleton": "^3.5.0",
     "swiper": "^11.2.6",
     "tw-elements": "^2.0.0"
   },

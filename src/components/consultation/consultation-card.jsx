@@ -7,7 +7,7 @@ function ConsultationCard({ item }) {
       <div className="card-img relative w-full h-[530px] rounded-2xl overflow-hidden">
         <Link href="/comparison-details/01">
           <img
-            className="w-full h-full transition hover:scale-105"
+            className="w-full h-full bg-gray-100 transition hover:scale-105"
             src={item.img}
             alt="consultant image"
           />

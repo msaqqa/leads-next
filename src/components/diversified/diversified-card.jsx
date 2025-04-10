@@ -1,18 +1,19 @@
+"use client";
 import Link from "next/link";
-import "./styles.css";
 import LeadsButton from "../leads/leads-button";
+import "./styles.css";
 
 function Diversified({ item }) {
   return (
     <div className="diversified-card">
       <div className="card-img w-full h-[390px] rounded-2xl overflow-hidden mb-5">
-        <a href="/comparison-details/01">
+        <Link href="/comparison-details/01">
           <img
-            className="w-full h-full transition hover:scale-105"
+            className="w-full h-full bg-gray-100 transition hover:scale-105"
             src={item.img}
             alt="diversified image"
           />
-        </a>
+        </Link>
       </div>
       <div className="card-text">
         <h4 className="text-2xl font-semibold capitalize mb-3">solar system</h4>
@@ -21,7 +22,7 @@ function Diversified({ item }) {
         </p>
         <div className="comparison">
           <ul className="list-none mb-5">
-            {item.featuers?.map((featuer, idx) => (
+            {item.features?.map((featuer, idx) => (
               <li key={idx} className="pl-12 mb-4">
                 {featuer}
               </li>

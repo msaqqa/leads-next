@@ -1,7 +1,7 @@
-import Diversified from "@/components/diversified/diversified";
+import DiversifiedList from "@/components/diversified/diversified-list";
 import SubHero from "@/components/hero/sub-hero/sub-hero";
 
-const diversifiedData = [
+const dataAPI = [
   {
     id: 1,
     img: "./images/diversified/diversified-04.png",
@@ -36,7 +36,14 @@ export const metadata = {
   title: "Leads | Diversified",
 };
 
-function DiversifiedPage() {
+async function getData() {
+  // const res = await fetch("https://api.example.com/comparisons", {cache: "force-cache});
+  // return res.json();
+  return dataAPI;
+}
+
+async function DiversifiedPage() {
+  const data = await getData();
   return (
     <>
       <SubHero
@@ -53,11 +60,7 @@ function DiversifiedPage() {
               Solar Providers and Costs Compared - Results in 3 Minutes!
             </p>
           </div>
-          <div className="diversified-cards grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-            {diversifiedData.map((item) => (
-              <Diversified key={item.id} item={item} />
-            ))}
-          </div>
+          <DiversifiedList data={data} />
         </div>
       </div>
     </>

@@ -55,7 +55,7 @@ function Experts() {
         </div>
         <div className="w-full md:w-1/2">
           <img
-            className="w-full bg-gray-100 rounded-2xl"
+            className="w-full min-[632px]: bg-gray-100 rounded-2xl"
             src="./images//expert.png"
             alt=""
           />

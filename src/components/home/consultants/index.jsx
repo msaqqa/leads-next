@@ -1,5 +1,5 @@
 "use client";
-import ConsultantsList from "./Consultants-list";
+import ConsultantsList from "./consultants-list";
 
 const consultantsData = [
   {

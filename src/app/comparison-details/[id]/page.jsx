@@ -7,7 +7,7 @@ export const metadata = {
   title: "Leads | Comparison Details",
 };
 
-export default function ComparisonDetails({ params }) {
+function page({ params }) {
   const { id } = params;
 
   if (!id) return notFound();
@@ -21,7 +21,9 @@ export default function ComparisonDetails({ params }) {
   );
 }
 
+export default page;
+
 // هذا الجزء ضروري جداً مع output: export
-export async function generateStaticParams() {
-  return [{ id: "01" }, { id: "02" }, { id: "03" }, { id: "04" }];
-}
+// export async function generateStaticParams() {
+//   return [{ id: "01" }, { id: "02" }, { id: "03" }, { id: "04" }];
+// }

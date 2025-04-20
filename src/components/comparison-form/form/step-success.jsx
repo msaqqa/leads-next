@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 function StepSuccess() {
   return (
     <div className="step">
@@ -26,18 +28,22 @@ function StepSuccess() {
           your planned solar system.
         </p>
         <div>
-          <button
-            className="w-36 h-12 bg-white text-gray-500 border border-gray-500 transition hover:border-gray-400 rounded-lg mr-4"
-            type="button"
-          >
-            Done
-          </button>
-          <button
-            className="w-36 h-12 bg-white text-blue-500 border border-blue-500 transition hover:border-blue-500 rounded-lg"
-            type="button"
-          >
-            Our Services
-          </button>
+          <Link href={"/"}>
+            <button
+              className="w-36 h-12 bg-white text-gray-500 border border-gray-500 transition hover:border-gray-400 rounded-lg mr-4 cursor-pointer"
+              type="button"
+            >
+              Done
+            </button>
+          </Link>
+          <Link href={"/"}>
+            <button
+              className="w-36 h-12 bg-white text-blue-500 border border-blue-500 transition hover:border-blue-500 rounded-lg cursor-pointer"
+              type="button"
+            >
+              Our Services
+            </button>
+          </Link>
         </div>
       </div>
     </div>

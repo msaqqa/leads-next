@@ -1,9 +1,8 @@
 "use client";
 
-import LeadsButton from "@/components/leads/leads-button";
-import Link from "next/link";
+import OptionsList from "./options-list";
 
-const options = [
+const optionsData = [
   {
     id: 1,
     icon: "./images/svg/solarSystem.svg",
@@ -41,32 +40,7 @@ function ComparisonOptions() {
           Explore available solutions and compare options to find the best
           easily
         </p>
-        <div className="comparison-cards grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-8">
-          {options.map((item) => (
-            <div
-              key={item.id}
-              className="comparison-card bg-white rounded-xl px-5 md:px-12 py-5"
-            >
-              <img className="mb-5" src={item.icon} alt="" />
-              <h3 className="text-2xl font-medium capitalize mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm font-normal text-gray-500 leading-relaxed text-pretty line-clamp-3 mb-4">
-                {item.dsc}
-              </p>
-              <ul className="list-none mb-5">
-                <li className="pl-12 mb-4">No contribution obligation.</li>
-                <li className="pl-12 mb-4">No contribution obligation.</li>
-              </ul>
-              <div>
-                <LeadsButton
-                  btnText={"Start Comparison"}
-                  btnLink={"/comparison-form/02"}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <OptionsList data={optionsData} />
       </div>
     </div>
   );

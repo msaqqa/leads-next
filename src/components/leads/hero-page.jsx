@@ -1,8 +1,11 @@
 "use client";
 
-function SubHero({ heroImg, heroTitle }) {
+function HeroPage({ heroImg, heroTitle }) {
   return (
-    <div id="hero" className="wow animate__animated animate__fadeInUp">
+    <div
+      id="hero"
+      className="bg-gray-100 wow animate__animated animate__fadeInUp"
+    >
       <div className="relative h-[400px] mt-[60px] lg:mt-[90px] flex justify-center items-center">
         <div className="container">
           <div
@@ -22,4 +25,4 @@ function SubHero({ heroImg, heroTitle }) {
   );
 }
 
-export default SubHero;
+export default HeroPage;

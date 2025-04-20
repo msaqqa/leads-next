@@ -1,5 +1,5 @@
 import AdviceSteps from "@/components/comparison-form/advice-steps";
-import HeroSection from "@/components/comparison-form/hero/hero";
+import ComparisonHero from "@/components/comparison-form/hero";
 import LeadingSection from "@/components/comparison-form/leading";
 import LeadsFeatures from "@/components/leads-features";
 import Questions from "@/components/questions/questions";
@@ -17,7 +17,7 @@ function page({ params }) {
   if (!id) return notFound();
   return (
     <>
-      <HeroSection />
+      <ComparisonHero />
       <Form />
       <LeadingSection />
       <AdviceSteps />
@@ -31,7 +31,3 @@ function page({ params }) {
 }
 
 export default page;
-
-export async function generateStaticParams() {
-  return [{ id: "01" }, { id: "02" }, { id: "03" }, { id: "04" }];
-}

@@ -35,7 +35,7 @@ function Experts() {
             </div>
             <div className="step p-2 lg:p-5 lg:pb-8 border-2 border-gray-200 rounded-xl">
               <div className="flex justify-between items-center mb-3">
-                <img src="./images/svg/expert-03.svg" alt="" />
+                <img src="/images/svg/expert-03.svg" alt="" />
                 <h3 className="text-4xl font-normal text-gray-400">03</h3>
               </div>
               <p className="text-xs lg:text-base leading-relaxed lg:leading-loose text-pretty">
@@ -44,7 +44,7 @@ function Experts() {
             </div>
             <div className="step p-2 lg:p-5 lg:pb-8 border-2 border-gray-200 rounded-xl">
               <div className="flex justify-between items-center mb-3">
-                <img src="./images/svg/expert-04.svg" alt="" />
+                <img src="/images/svg/expert-04.svg" alt="" />
                 <h3 className="text-4xl font-normal text-gray-400">04</h3>
               </div>
               <p className="text-xs lg:text-base leading-relaxed lg:leading-loose text-pretty">

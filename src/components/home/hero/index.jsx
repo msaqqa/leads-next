@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
 import LeadsButton from "@/components/leads/leads-button";
+import HeroSlider from "../../leads/hero-slider";
 
 const tabs = [
   {
@@ -48,7 +47,7 @@ const tabs = [
   },
 ];
 
-const HomeHero = () => {
+const Hero = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [manualChange, setManualChange] = useState(false);
 
@@ -73,7 +72,7 @@ const HomeHero = () => {
   };
 
   return (
-    <div id="hero" className="hero-section pt-24 lg:pt-36 pb-8">
+    <div id="hero" className="hero-section bg-gray-100 pt-24 lg:pt-36 pb-8">
       <div className="container">
         {/* Tabs Navigation */}
         <ul className="w-full md:w-1/2 flex flex-row flex-wrap gap-3 mb-6 lg:mb-12 md:pr-12">
@@ -121,30 +120,7 @@ const HomeHero = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 md:-mt-[73px] lg:-mt-[105px] rounded-2xl pb-6">
-                <Swiper
-                  modules={[Pagination, Autoplay]}
-                  pagination={{ clickable: true }}
-                  autoplay={{ delay: 3000, disableOnInteraction: false }}
-                  loop={true}
-                  className="hero-swiper w-full pb-8"
-                >
-                  {tab.galleryImages?.map((item) => (
-                    <SwiperSlide
-                      key={item.id}
-                      className="flex justify-start md:justify-center"
-                    >
-                      <div className="image-wrapper h-[510px]">
-                        <Image
-                          className="w-full h-full bg-gray-100 aspect-square rounded-2xl"
-                          src={item.imageUrl}
-                          alt={item.altText}
-                          width={510}
-                          height={510}
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                <HeroSlider data={tab.galleryImages} />
               </div>
             </div>
           </div>
@@ -154,4 +130,4 @@ const HomeHero = () => {
   );
 };
 
-export default HomeHero;
+export default Hero;

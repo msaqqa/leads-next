@@ -1,5 +1,5 @@
 import DiversifiedList from "@/components/diversified/diversified-list";
-import SubHero from "@/components/hero/sub-hero/sub-hero";
+import HeroPage from "@/components/leads/hero-page";
 
 const dataAPI = [
   {
@@ -42,11 +42,11 @@ async function getData() {
   return dataAPI;
 }
 
-async function DiversifiedPage() {
+async function page() {
   const data = await getData();
   return (
     <>
-      <SubHero
+      <HeroPage
         heroImg={"/images/backgrounds/diversified-bg.png"}
         heroTitle={"Diversified"}
       />
@@ -67,4 +67,4 @@ async function DiversifiedPage() {
   );
 }
 
-export default DiversifiedPage;
+export default page;

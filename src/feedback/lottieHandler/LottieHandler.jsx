@@ -1,14 +1,9 @@
-import dynamic from "next/dynamic";
 import Lottie from "lottie-react";
 import notFound from "@/assets/lottie-files/notFound.json";
-// import loading from "@/assets/lottie-files/loading.json";
+import loading from "@/assets/lottie-files/loading.json";
 import empty from "@/assets/lottie-files/empty.json";
 import error from "@/assets/lottie-files/error.json";
 import success from "@/assets/lottie-files/success.json";
-
-const loading = dynamic(() => import("@/assets/lottie-files/loading.json"), {
-  ssr: false,
-});
 
 const lottieTypes = {
   notFound,

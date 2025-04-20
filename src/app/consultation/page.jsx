@@ -1,5 +1,5 @@
 import ConsultationCards from "@/components/consultation/consultation-cards";
-import SubHero from "@/components/hero/sub-hero/sub-hero";
+import HeroPage from "@/components/leads/hero-page";
 
 const tabs = [
   { label: "general", category: "general" },
@@ -72,7 +72,7 @@ export const metadata = {
 function page() {
   return (
     <>
-      <SubHero
+      <HeroPage
         heroImg={"/images/backgrounds/consultation-bg.png"}
         heroTitle={"Consultation"}
       />

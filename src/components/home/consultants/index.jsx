@@ -1,7 +1,7 @@
 "use client";
-import Consultant from "./consultant";
+import ConsultantsList from "./Consultants-list";
 
-const consultants = [
+const consultantsData = [
   {
     id: 1,
     img: "./images/consultants/consultant-01.png",
@@ -38,11 +38,7 @@ function Consultants() {
               Browse All
             </a>
           </div>
-          <div className="consultant-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {consultants.map((consultant) => (
-              <Consultant key={consultant.id} consultant={consultant} />
-            ))}
-          </div>
+          <ConsultantsList data={consultantsData} />
         </div>
       </div>
     </>

@@ -2,11 +2,14 @@
 import { useState } from "react";
 import Step from "./step";
 import StepSuccess from "./step-success";
+import axios from "axios";
 
-const StepperForm = ({ steps, currentStep, setCurrentStep }) => {
+const StepperForm = ({ formData, currentStep, setCurrentStep }) => {
+  const { productId, steps } = formData;
   const [selectedOptions, setSelectedOptions] = useState({});
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
 
   const handleNext = () => {
     setCurrentStep((prev) => prev + 1);
@@ -24,25 +27,49 @@ const StepperForm = ({ steps, currentStep, setCurrentStep }) => {
     handleNext();
   };
 
-  const updateAnswer = (questionId, value) => {
-    setFormValues((prev) => ({
-      ...prev,
-      [questionId]: value,
-    }));
+  const updateAnswer = (questionId, answer) => {
+    setFormValues((prevAnswers) => {
+      const existingIndex = prevAnswers.findIndex(
+        (item) => item.questionId === questionId
+      );
+
+      if (existingIndex !== -1) {
+        // Replace existing answer
+        const updatedAnswers = [...prevAnswers];
+        updatedAnswers[existingIndex] = { questionId, answer };
+        return updatedAnswers;
+      } else {
+        // Add new answer
+        return [...prevAnswers, { questionId, answer }];
+      }
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleNext();
+    setIsLoading(true);
+    const formData = new FormData();
+    formData.append("productId", productId);
+    formData.append("answers", JSON.stringify(formValues));
+    // console.log("formValues", formValues);
+    try {
+      const { data } = await axios.post("/api/form/submit", formData);
+      if (data.success) {
+        setFormValues([]);
+        console.log(data.message);
+      } else {
+        console.log(data.message);
+      }
+    } catch (error) {}
+    setIsLoading(false);
     setIsSubmitted(true);
-    console.log("data", formValues);
   };
 
   return (
     <form id="stepperForm">
       {/* <!-- stepes --> */}
       <div className="p-4 md:p-10 bg-neutral-100 rounded-2xl">
-        {isSubmitted ? (
+        {!isloading && isSubmitted ? (
           <StepSuccess />
         ) : (
           <Step
@@ -66,10 +93,13 @@ const StepperForm = ({ steps, currentStep, setCurrentStep }) => {
           {currentStep === steps.length - 1 ? (
             <button
               type="button"
-              className="w-36 h-12 bg-green-700 text-white border border-green-700 rounded-lg transition hover:bg-transparent hover:text-green-700 cursor-pointer"
+              className={`w-36 h-12 bg-green-700 text-white border border-green-700 rounded-lg transition hover:bg-transparent hover:text-green-700 ${
+                isloading ? "cursor-not-allowed" : "cursor-pointer"
+              }`}
               onClick={handleSubmit}
+              disabled={isloading}
             >
-              Submit
+              {isloading ? "Loading..." : "Submit"}
             </button>
           ) : (
             <button

@@ -100,7 +100,7 @@ function index() {
           />
         </div>
         <StepperForm
-          steps={formData.steps}
+          formData={formData}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
         />

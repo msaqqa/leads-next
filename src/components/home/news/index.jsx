@@ -1,7 +1,7 @@
-import React from "react";
-import SingleNews from "./single-news";
+"use client";
+import NewsList from "./news-list";
 
-const news = [
+const newsData = [
   {
     id: 1,
     img: "./images/news/news-01.png",
@@ -43,11 +43,7 @@ function News() {
             Browse All
           </a>
         </div>
-        <div className="news-cards grid grid-cols-1 md:grid-cols-2 gap-8">
-          {news.map((item) => (
-            <SingleNews key={item.id} data={item} />
-          ))}
-        </div>
+        <NewsList data={newsData} />
       </div>
     </div>
   );

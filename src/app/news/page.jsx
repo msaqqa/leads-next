@@ -1,5 +1,5 @@
 import ConsultationCards from "@/components/consultation/consultation-cards";
-import SubHero from "@/components/hero/sub-hero/sub-hero";
+import HeroPage from "@/components/leads/hero-page";
 
 export const metadata = {
   title: "Leads | News",
@@ -65,7 +65,10 @@ const consultationData = [
 function page() {
   return (
     <>
-      <SubHero heroImg={"/images/backgrounds/news-bg.png"} heroTitle={"News"} />
+      <HeroPage
+        heroImg={"/images/backgrounds/news-bg.png"}
+        heroTitle={"News"}
+      />
       <div className="py-16">
         <div className="container wow animate__animated animate__fadeInUp">
           <h2 className="text-2xl lg:text-4xl font-semibold text-neutral-900 capitalize mb-8">

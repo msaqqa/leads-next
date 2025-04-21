@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import VideoPlayer from "../leads/video-player";
 
 function Questions() {
   const items = [
@@ -201,13 +202,10 @@ function Questions() {
           </div>
           <div className="w-full md:w-1/2">
             <div className="aspect-video rounded-2xl bg-blue-50 overflow-hidden">
-              <video
-                src="/images/instructional-video.mp4"
-                className="w-full h-full object-cover"
-                controls
-              >
-                Your browser does not support the video tag.
-              </video>
+              <VideoPlayer
+                src={"/images/instructional-video.mp4"}
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

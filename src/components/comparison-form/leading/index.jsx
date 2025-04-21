@@ -1,5 +1,6 @@
 "use client";
 import LeadsButton from "@/components/leads/leads-button";
+import VideoPlayer from "@/components/leads/video-player";
 
 const LeadingSection = () => {
   return (
@@ -37,13 +38,10 @@ const LeadingSection = () => {
 
           <div className="leading-video md:col-span-2 mb-10 lg:mb-0">
             <div className="aspect-[9/16] bg-gray-50 rounded-2xl overflow-hidden">
-              <video
+              <VideoPlayer
                 src="/images/leading.mp4"
-                className="w-full h-full object-contain"
-                controls
-              >
-                Your browser does not support the video tag.
-              </video>
+                className="object-contain"
+              />
             </div>
           </div>
 
